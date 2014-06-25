@@ -5,42 +5,21 @@ SWD.Starter
 In order to download and start using the project you have to install:  
 
 * **[Git]( http://git-scm.com/)** 
-* [Visual Studio 2013 Express Desktop]( http://www.microsoft.com/en-US/download/details.aspx?id=40787) (if you don’t have a professional one) 
+*TBD*
 
-I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to perform such boring operations – automatically.
+
 
 ## :small_red_triangle_down: Download SWD Page Recorder
 
 [![Logo](https://github.com/dzharii/SWD.Starter/raw/master/images/page-recorder.png)](https://github.com/dzharii/swd-recorder/releases)
 
 
-## Inaccurate instructions
-
-    1. Run Page Recorder
-    2. Open SWD.Starter / src / SWD.StarterKit.sln
-    	2.1 Copy 
-    		* chromedriver.exe
-    		* IEDriverServer.exe
-    		into folder webdrivers
-    	
-    	2.2 Build the project
-
-    3. Record your PageObject with Page Recorder
-      
-    4. Generate code with template "[CSharp] SWD Starter PageObjects"
-    5. Follow the instructions inside generated code
-    	5.1 Implement Invoke() and IsDisplayed();
-
-    6. Run the tests (set browser in the file "Config.config")
-       swdBrowserType
-       default is Firefox
-
 
 ## Doxygen documentation generator
 
-Just don’t forget to run `SWD.Starter\doxygen_run.cmd` and enjoy your framework API documentation!  
+Just run `SWD.StarterJ\doxygen_run.cmd` and enjoy your framework API documentation!  
 
-See generated `SWD.Starter\docs\api\html\index.html`
+See generated `SWD.StarterJ\docs\api\html\index.html`
 
 ![Logo](https://github.com/dzharii/SWD.Starter/raw/master/images/doxy.png)
 
@@ -90,7 +69,7 @@ var newProjectForm = projectsPage.OpenNewProjectForm();
 ### :video_camera: Videos
 
 * [(English)SWD Page Recorder: Working with Frames and JavaScript popups]( https://www.youtube.com/watch?v=C4jnX0PF_mc)
-* [(Rus) SWD Page Recorder BETA1 -- записывает PageObject'ы на C#, Java, Ruby, Perl, Python!]( https://www.youtube.com/watch?v=4Md_kC4Fdpg)
+* [(Rus) SWD Page Recorder BETA1 &mdash; записывает PageObject'ы на C#, Java, Ruby, Perl, Python!]( https://www.youtube.com/watch?v=4Md_kC4Fdpg)
 * [За пределами PageObject](http://blog.zhariy.com/2013/02/atdays-pageobject.html)
 
 ### :octocat: Original Github open-source Projects
@@ -100,7 +79,7 @@ var newProjectForm = projectsPage.OpenNewProjectForm();
 
 ### :mag_right: About Dmytro ;)
 
-* Blog (Rus): http://blog.zhariy.com/
+* My Homepage / Blog: http://zhariy.com/
 * LinkedIn: https://www.linkedin.com/in/dmytrozharii
 * Skype: dzhariy
 * :corn: Resume:  https://drive.google.com/file/d/0Bx--97zzjKNERnZfdjNMdlVMUG8/edit?usp=sharing
