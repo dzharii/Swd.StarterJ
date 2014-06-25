@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [org.swd.starterj.demo.Smoke_test_for_each_pageobject]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="org.swd.starterj.demo.Smoke_test_for_each_pageobject">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="tearDownClass"/>
+          <include name="trueShouldNeverBeEqualToFalseSoThisCaseShouldFail"/>
+          <include name="setUpMethod"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- org.swd.starterj.demo.Smoke_test_for_each_pageobject -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [org.swd.starterj.demo.Smoke_test_for_each_pageobject] -->
