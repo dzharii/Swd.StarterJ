@@ -8,7 +8,8 @@ package org.swd.starterj.demo;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.*;
-
+import org.swd.starterj.core.*;
+import org.openqa.selenium.*;
 /**
  *
  * @author dzhariy
@@ -27,6 +28,10 @@ public class Smoke_test_for_each_pageobject {
     @Test
     public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail() 
     {
+        WebDriver driver = SwdBrowser.getDriver();
+        driver.navigate().to("http://swd-tools.com");
+//        driver.quit();
+        
         assertEquals(true, false, "should fail because tru is not equals to false");
     }
 
