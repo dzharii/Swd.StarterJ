@@ -7,9 +7,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.*;
 
-public class SwdBrowser {
+public final class SwdBrowser {
     
-    private static WebDriverRunner wrapper = null;
+    private static WebDriverRunner webDriverRunner = null;
     
     private SwdBrowser(){
     }
@@ -24,15 +24,15 @@ public class SwdBrowser {
     */
     public static WebDriver getDriver()
     {
-        if (wrapper == null) {
+        if (webDriverRunner == null) {
             // TODO: Implement browser creation from 
             // configuration file
-            wrapper = WebDriverRunner.getInstance();
+            webDriverRunner = WebDriverRunner.getInstance();
         }
         
         WebDriver driver = null; 
         try {
-            driver = wrapper.getDriver();
+            driver = webDriverRunner.getDriver();
         } catch (IOException ex) {
             Logger.getLogger(SwdBrowser.class.getName()).log(Level.SEVERE, null, ex);
         }

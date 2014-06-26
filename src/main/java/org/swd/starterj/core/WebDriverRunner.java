@@ -20,17 +20,17 @@ class WebDriverRunner {
     /*
      Supported Browsers
      */
-    public static final String browser_Firefox = "Firefox";
-    public static final String browser_Chrome = "Chrome";
-    public static final String browser_InternetExplorer = "InternetExplorer";
-    public static final String browser_PhantomJS = "PhantomJS";
-    public static final String browser_HtmlUnit = "HtmlUnit";
-    public static final String browser_HtmlUnitWithJavaScript = "HtmlUnitWithJavaScript";
-    public static final String browser_Opera = "Opera";
-    public static final String browser_Safari = "Safari";
-    public static final String browser_IPhone = "IPhone";
-    public static final String browser_IPad = "IPad";
-    public static final String browser_Android = "Android";
+    public static final String BROWSER_FIREFOX = "Firefox";
+    public static final String BROWSER_CHROME = "Chrome";
+    public static final String BROWSER_IE = "InternetExplorer";
+    public static final String BROWSER_PHANTOM_JS = "PhantomJS";
+    public static final String BROWSER_HTML_UNIT = "HtmlUnit";
+    public static final String BROWSER_HTML_UNIT_JS = "HtmlUnitWithJavaScript";
+    public static final String BROWSER_OPERA = "Opera";
+    public static final String BROWSER_SAFARI = "Safari";
+    public static final String BROWSER_IPHONE = "IPhone";
+    public static final String BROWSER_IPAD = "IPad";
+    public static final String BROWSER_ANDROID = "Android";
 
     private WebDriverRunner() {
 
@@ -76,50 +76,50 @@ class WebDriverRunner {
     private WebDriver RunDriver(String browserType, boolean isRemote, String remoteUrl) throws MalformedURLException {
         WebDriver newDriver = null;
         if (isRemote) {
-            newDriver = ConnetctToRemoteWebDriver(browserType, remoteUrl);
+            newDriver = connetctToRemoteWebDriver(browserType, remoteUrl);
         } else {
-            newDriver = StartEmbededWebDriver(browserType);
+            newDriver = startEmbededWebDriver(browserType);
         }
         return newDriver;
     }
 
-    private WebDriver ConnetctToRemoteWebDriver(String browserType, String remoteUrl) throws MalformedURLException {
+    private WebDriver connetctToRemoteWebDriver(String browserType, String remoteUrl) throws MalformedURLException {
         DesiredCapabilities caps = null;
         URL hubUri = new URL(remoteUrl);
 
         switch (browserType) {
 
-            case browser_Firefox:
+            case BROWSER_FIREFOX:
                 caps = DesiredCapabilities.firefox();
                 break;
-            case browser_Chrome:
+            case BROWSER_CHROME:
                 caps = DesiredCapabilities.chrome();
                 break;
-            case browser_InternetExplorer:
+            case BROWSER_IE:
                 caps = DesiredCapabilities.internetExplorer();
                 break;
-            case browser_PhantomJS:
+            case BROWSER_PHANTOM_JS:
                 caps = DesiredCapabilities.phantomjs();
                 break;
-            case browser_HtmlUnit:
+            case BROWSER_HTML_UNIT:
                 caps = DesiredCapabilities.htmlUnit();
                 break;
-            case browser_HtmlUnitWithJavaScript:
+            case BROWSER_HTML_UNIT_JS:
                 caps = DesiredCapabilities.htmlUnitWithJs();
                 break;
-            case browser_Opera:
+            case BROWSER_OPERA:
                 caps = DesiredCapabilities.opera();
                 break;
-            case browser_Safari:
+            case BROWSER_SAFARI:
                 caps = DesiredCapabilities.safari();
                 break;
-            case browser_IPhone:
+            case BROWSER_IPHONE:
                 caps = DesiredCapabilities.iphone();
                 break;
-            case browser_IPad:
+            case BROWSER_IPAD:
                 caps = DesiredCapabilities.ipad();
                 break;
-            case browser_Android:
+            case BROWSER_ANDROID:
                 caps = DesiredCapabilities.android();
                 break;
             default:
@@ -133,17 +133,17 @@ class WebDriverRunner {
 
     }
 
-    private WebDriver StartEmbededWebDriver(String browserType) {
+    private WebDriver startEmbededWebDriver(String browserType) {
         switch (browserType) {
-            case browser_Firefox:
+            case BROWSER_FIREFOX:
                 return new FirefoxDriver();
-            case browser_Chrome:
+            case BROWSER_CHROME:
                 return new ChromeDriver();
-            case browser_InternetExplorer:
+            case BROWSER_IE:
                 return new InternetExplorerDriver();
-            case browser_PhantomJS:
+            case BROWSER_PHANTOM_JS:
                 return new PhantomJSDriver();
-            case browser_Safari:
+            case BROWSER_SAFARI:
                 return new SafariDriver();
             default:
                 String errorMessage = String.format(
