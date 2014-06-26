@@ -26,6 +26,14 @@ public class Smoke_test_for_each_pageobject {
     // @Test
     // public void hello() {}
     
+    
+   
+    @Test
+    public void testJava() 
+    {
+        System.out.println("Hello Java!");
+    }   
+    
     @Test
     public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail() throws IOException 
     {
