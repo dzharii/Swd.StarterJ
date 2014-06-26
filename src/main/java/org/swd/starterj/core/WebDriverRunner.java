@@ -77,10 +77,8 @@ class WebDriverRunner {
         WebDriver newDriver = null;
         if (isRemote) {
             newDriver = ConnetctToRemoteWebDriver(browserType, remoteUrl);
-            isRemote = true;
         } else {
             newDriver = StartEmbededWebDriver(browserType);
-            isRemote = false;
         }
         return newDriver;
     }

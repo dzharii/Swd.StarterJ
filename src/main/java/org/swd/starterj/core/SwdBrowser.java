@@ -11,6 +11,9 @@ public class SwdBrowser {
     
     private static WebDriverRunner wrapper = null;
     
+    private SwdBrowser(){
+    }
+    
     /**
      * Returns current WebDriver instance.    
      *
