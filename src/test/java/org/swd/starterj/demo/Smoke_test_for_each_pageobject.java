@@ -36,6 +36,17 @@ public class Smoke_test_for_each_pageobject {
         
         assertEquals(true, false, "should fail because tru is not equals to false");
     }
+    
+        @Test
+    public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail2() throws IOException 
+    {
+        WebDriver driver = SwdBrowser.getDriver();
+        
+        String url = "http://automated-testing.info";
+        driver.navigate().to(url);
+        
+        assertEquals(true, false, "should fail because tru is not equals to false");
+    }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
