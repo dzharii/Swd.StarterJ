@@ -7,10 +7,12 @@
 package org.swd.starterj.demo;
 
 import java.io.IOException;
+import org.openqa.selenium.*;
+import org.swd.starterj.core.*;
+import org.swd.starterj.demo.testmodel.*;
+import org.swd.starterj.demo.testmodel.pages.*;
 import static org.testng.Assert.*;
 import org.testng.annotations.*;
-import org.swd.starterj.core.*;
-import org.openqa.selenium.*;
 /**
  *
  * @author dzhariy
@@ -20,40 +22,18 @@ public class Smoke_test_for_each_pageobject {
     public Smoke_test_for_each_pageobject() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
     
     
-   
-    @Test
-    public void testJava() 
+    public void testPage(MyBasePage page)
     {
-        System.out.println("Hello Java!");
-    }   
-    
-    @Test
-    public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail() throws IOException 
-    {
-        WebDriver driver = SwdBrowser.getDriver();
-        
-        String url = Config.applicationMainUrl();
-        driver.navigate().to(url);
-        
-        assertEquals(true, false, "should fail because tru is not equals to false");
+        page.invoke();
+        page.verifyExpectedElementsAreDisplayed();
     }
     
-        @Test
-    public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail2() throws IOException 
+    @Test
+    public void test_EmptyPage() 
     {
-        WebDriver driver = SwdBrowser.getDriver();
-        
-        String url = "http://automated-testing.info";
-        driver.navigate().to(url);
-        
-        assertEquals(true, false, "should fail because tru is not equals to false");
+        testPage(MyPages.getEmptyPage());
     }
 
     @BeforeClass

@@ -6,10 +6,16 @@
 
 package org.swd.starterj.demo.testmodel;
 
+import org.swd.starterj.demo.testmodel.pages.*;
+
 /**
  *
  * @author dzhariy
  */
 public class MyPages {
     
+    public static final EmptyPage getEmptyPage()
+    {
+        return new EmptyPage();
+    }
 }
