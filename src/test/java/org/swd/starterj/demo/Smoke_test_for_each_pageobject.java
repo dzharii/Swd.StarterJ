@@ -6,6 +6,7 @@
 
 package org.swd.starterj.demo;
 
+import java.io.IOException;
 import static org.testng.Assert.*;
 import org.testng.annotations.*;
 import org.swd.starterj.core.*;
@@ -26,11 +27,12 @@ public class Smoke_test_for_each_pageobject {
     // public void hello() {}
     
     @Test
-    public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail() 
+    public void trueShouldNeverBeEqualToFalseSoThisCaseShouldFail() throws IOException 
     {
         WebDriver driver = SwdBrowser.getDriver();
-        driver.navigate().to("http://swd-tools.com");
-//        driver.quit();
+        
+        String url = Config.applicationMainUrl();
+        driver.navigate().to(url);
         
         assertEquals(true, false, "should fail because tru is not equals to false");
     }

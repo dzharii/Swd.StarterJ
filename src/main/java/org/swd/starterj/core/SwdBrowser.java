@@ -1,12 +1,15 @@
 package org.swd.starterj.core;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.*;
 
 public class SwdBrowser {
     
-    private static WebDriverWrapper wrapper = null;
+    private static WebDriverRunner wrapper = null;
     
     /**
      * Returns current WebDriver instance.    
@@ -21,8 +24,15 @@ public class SwdBrowser {
         if (wrapper == null) {
             // TODO: Implement browser creation from 
             // configuration file
-            wrapper = WebDriverWrapper.getInstance();
+            wrapper = WebDriverRunner.getInstance();
         }
-        return wrapper.getDriver();
+        
+        WebDriver driver = null; 
+        try {
+            driver = wrapper.getDriver();
+        } catch (IOException ex) {
+            Logger.getLogger(SwdBrowser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return driver;
     }
 }
