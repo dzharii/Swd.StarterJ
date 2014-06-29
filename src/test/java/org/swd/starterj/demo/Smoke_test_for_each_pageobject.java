@@ -15,18 +15,26 @@ public class Smoke_test_for_each_pageobject {
 
     
     
-    public void testPage(MyBasePage page)
+    public void testPage(MyBasePage page) throws Throwable
     {
         page.invoke();
         page.verifyExpectedElementsAreDisplayed();
     }
     
     @Test
-    public void test_EmptyPage() 
+    public void test_EmptyPage() throws Throwable 
     {
         testPage(MyPages.getEmptyPage());
     }
 
+    @Test
+    public void testTwitterLoginPage () throws Throwable 
+    {
+        testPage(MyPages.getTwitterLoginPage());
+    } 
+    
+    
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }

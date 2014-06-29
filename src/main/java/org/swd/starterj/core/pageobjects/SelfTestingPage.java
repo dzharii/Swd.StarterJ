@@ -25,6 +25,7 @@ public interface SelfTestingPage {
      * Performs user defined self-testing actions. Usually, 
      * checks if the declared controls are present on the user screen
      * for opened web page
+     * @throws java.lang.Throwable
      */
-    void verifyExpectedElementsAreDisplayed();    
+    void verifyExpectedElementsAreDisplayed() throws Throwable;    
 }

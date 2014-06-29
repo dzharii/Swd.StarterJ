@@ -16,13 +16,13 @@ public abstract class MyBasePage extends CorePage implements SelfTestingPage {
     public abstract boolean isDisplayed();
 
     @Override
-    public abstract void verifyExpectedElementsAreDisplayed();
+    public abstract void verifyExpectedElementsAreDisplayed() throws Throwable;
 
     /**
      * Verifies the expected WebElement to be Visible
      */
     // 
-    public void verifyElementVisible(String elementName, WebElement webElement) throws Exception {
+    public void verifyElementVisible(String elementName, WebElement webElement) throws Throwable {
         if (!webElement.isDisplayed()) {
             String message = "Error: WebElement with name <" + elementName + ">\n"
                     + "was expected to be visible,"

@@ -25,8 +25,7 @@ public abstract class CorePage {
     {
         return SwdBrowser.getDriver();
     }
-    
-    
+
     /**
      * 
      * @param sourceElement: Webdriver PageObject element
@@ -37,10 +36,8 @@ public abstract class CorePage {
         return new WebElementExtensions(sourceElement);
     }
     
-    
     public CorePage()
     {
         PageFactory.initElements(getDriver(), this);
     }
-    
 }

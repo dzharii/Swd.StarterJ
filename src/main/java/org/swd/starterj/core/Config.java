@@ -64,18 +64,19 @@ public class Config {
     }
 
     /**
-    * Add your own configuration parameters
-    * -------------------------------------
-    * Quick instructions:  
-    * 
-    * 1. Open the file `config.properties`
-    * 2. Add the following line: 
-    *    >  yourParameterName=AnyStringValue
-    * 3. Create a method with name `yourParameterName` 
-    *    which reads configuration file key `yourParameterName`
-    *
-    * Put your configuration settings below:
-    */
+     * Add your own configuration parameters
+     * -------------------------------------
+     * Quick instructions:  
+     * 
+     * 1. Open the file `config.properties`
+     * 2. Add the following line: 
+     *    >  yourParameterName=AnyStringValue
+     * 3. Create a method with name `yourParameterName` 
+     *    which reads configuration file key `yourParameterName`
+     *
+     * Put your configuration settings below:
+     * @throws java.io.IOException
+     */
     public static String yourParameterName() throws IOException
     {
         return readProperty("yourParameterName");
