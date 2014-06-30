@@ -1,8 +1,15 @@
 package org.swd.starterj.core.pageobjects;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.swd.starterj.core.*;
 
 public class WebElementExtensions {
 
@@ -18,15 +25,26 @@ public class WebElementExtensions {
     }
 
     /**
+     * \todo TEST THIS:
+     * 
+     *  * For unexpected exceptions
+     *  * Create acceptance test with HTML Page
+     * 
      * Waits until element is visible. Internally, uses element.isDisplayed with
      * ignored WebDriver exceptions
      *
      * @param timeOutMilliSeconds
      * @return the reference to web element if it was found
-     * @throws TimeoutException
+     * @throws Throwable
      */
-    public WebElement waitUntilVisible(long timeOutMilliSeconds) throws TimeoutException {
-        return Wait.untilVisible(sourceWebElement, timeOutMilliSeconds);
+    public WebElement waitUntilVisible(long timeOutMilliSeconds) throws Throwable {
+        WebDriverWait wait = new WebDriverWait(SwdBrowser.getDriver(), timeOutMilliSeconds);
+        
+        wait.pollingEvery( 100, TimeUnit.MILLISECONDS )
+            .ignoring( NoSuchElementException.class, StaleElementReferenceException.class );
+        
+        ExpectedCondition elementVisibleCondition = ExpectedConditions.visibilityOf(sourceWebElement);
+        return (WebElement) wait.until(elementVisibleCondition);
     }
 
     /**
