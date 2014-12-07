@@ -22,7 +22,5 @@ public class Sample_Functional_Tests {
     public void hello() {
         WebDriver driver = SwdBrowser.getDriver();
         
-        
-        
     }
 }
