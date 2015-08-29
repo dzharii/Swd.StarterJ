@@ -37,6 +37,7 @@ public class Smoke_test_for_each_pageobject {
     
     @BeforeClass
     public static void setUpClass() throws Exception {
+        
     }
 
     @AfterClass
