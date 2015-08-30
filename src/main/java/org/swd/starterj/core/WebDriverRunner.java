@@ -5,7 +5,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.*;
-import org.openqa.selenium.phantomjs.*;
 import org.openqa.selenium.safari.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -141,9 +140,7 @@ class WebDriverRunner {
                 return new ChromeDriver();
             case BROWSER_IE:
                 return new InternetExplorerDriver();
-            case BROWSER_PHANTOM_JS:
-                return new PhantomJSDriver();
-            case BROWSER_SAFARI:
+             case BROWSER_SAFARI:
                 return new SafariDriver();
             default:
                 String errorMessage = String.format(

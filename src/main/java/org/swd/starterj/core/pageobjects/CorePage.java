@@ -5,7 +5,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.*;
-import org.openqa.selenium.phantomjs.*;
 import org.openqa.selenium.safari.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
