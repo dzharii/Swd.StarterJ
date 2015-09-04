@@ -1,7 +1,7 @@
 SWD.Starter
 ===========
 
-### ← [SWD Page Recorder](https://github.com/dzharii/swd-recorder) -= SWD Starter Java =-  [SWD Starter C#](https://github.com/dzharii/SWD.Starter) →
+#### ← [SWD Page Recorder](https://github.com/dzharii/swd-recorder) -= SWD Starter Java =-  [SWD Starter C#](https://github.com/dzharii/SWD.Starter) →
 
 ## :apple: Installation Prerequisites 
 In order to download and start using the project you have to install:  
